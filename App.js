@@ -15,10 +15,59 @@ import {
   ImageBackground
 } from 'react-native';
 import FinancialHubGradientText from './src/screens/financialHubpractice';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
+
+function SettingsScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+
+
+/**
+ * Idea: Create a function component (screens.js example) that will return
+ * a React element
+ * A React element is a JavaScript object containing at least a type and props
+ * 
+ * @returns a Screen for the users to view
+ */
+function ThirdScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Third Tab!</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="ThirdTab" component={ThirdScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
 
 const HelloWorldApp = () => {
   // I want to return a view
   return (
+  
     // This view is given a style of the container
     // All the children within this view will have the styles.container applied to them
     <View style={styles.container}>
@@ -63,4 +112,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HelloWorldApp;
+export default App;
