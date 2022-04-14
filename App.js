@@ -21,6 +21,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FirstPageMiddle from './src/screens/FirstPageMiddle';
 import CardIntro from './src/screens/CardIntro';
+import TermsConditions from './src/screens/TermsConditions';
 
 function HomeScreen() {
   return (
@@ -79,6 +80,7 @@ const OnboardingStart = ({ navigation }) => {
         <Stack.Navigator initialRouteName='OnboardingHome' screenOptions={{headerShown: false}}>
           <Stack.Screen name='OnboardingHome' component={FirstPageMiddle} />
           <Stack.Screen name='CardIntro' component={CardIntro} />
+          <Stack.Screen name='TermsConditions' component={TermsConditions} />
         </Stack.Navigator>
       </NavigationContainer>
   )

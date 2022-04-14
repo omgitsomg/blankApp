@@ -1,5 +1,4 @@
 import {
-    Button,
     Pressable,
     StyleSheet,
     Text,
@@ -10,6 +9,9 @@ import React from 'react';
 import { useNavigation } from "@react-navigation/native";
 import figmaColors from '../res/figmaColors';
 
+
+// This is the common orange button found a lot in the onboarding process
+// I created this function, so we can reuse the component in other screens/pages
 function OrangeButton (props) {
     const navigation = useNavigation();
 
